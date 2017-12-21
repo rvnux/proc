@@ -7,7 +7,7 @@
  #include <linux/seq_file.h>	// for sequence files
  #include <linux/jiffies.h>	// for jiffies
 
- static struct proc_dir_entry *jif_file;
+ static struct proc_dir_entry *jif_dir;
 
  static int 
  jif_show(struct seq_file *m, void *v)
@@ -34,9 +34,9 @@
  static int __init 
  jif_init(void)
  {
-     jif_file = proc_create("ravi_jif", 0, NULL, &jif_fops);
+     jif_dir = proc_create("ravi_jif", 0, NULL, &jif_fops);
 
-     if (!jif_file) {
+     if (!jif_dir) {
          return -ENOMEM;
      }
 
