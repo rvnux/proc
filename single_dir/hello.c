@@ -34,7 +34,7 @@
  static int __init 
  jif_init(void)
  {
-     jif_dir = proc_create("ravi_jif", 0, NULL, &jif_fops);
+     jif_dir = proc_create("file_jif", 0, NULL, &jif_fops);
 
      if (!jif_dir) {
          return -ENOMEM;
@@ -46,7 +46,7 @@
  static void __exit
  jif_exit(void)
  {
-     remove_proc_entry("ravi_jif", NULL);
+     remove_proc_entry("file_jif", NULL);
  }
 
  module_init(jif_init);
